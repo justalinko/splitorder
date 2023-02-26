@@ -1,0 +1,9 @@
+1. Pesanan masuk ( sumber pesanan dari web / admin )
+2. Pesanan Di cek pembayaran oleh admin minimal DP
+3. Pesanan di forward ke distribusi ( status ubah jadi distribusi )
+4. Anggota yang di pilih admin untuk produksi dapat notifikasi di dashboard user
+5. Anggota melakukan produksi ( ketua komunitas mengubah status menjadi produksi )
+6. Anggota selesai produksi ( ketua komunitas mengubah status menjadi selesai produksi ) / Anggota mengalami kendala ( ketua komunitas mengubah status menjadi kendala dengan catatan kendala yang terjadi )
+7. Admin melakukan pengecekan produksi / kendala ( status ubah jadi pengecekan produksi / kendala )
+8. Admin mengirim pesanan ke customer ( status ubah jadi pengiriman )
+9. Customer menerima pesanan ( status ubah jadi selesai )

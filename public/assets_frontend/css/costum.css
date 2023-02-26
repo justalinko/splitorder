@@ -1,0 +1,20 @@
+.boxed-btn{
+    margin-top: -7px !important;
+}
+
+.text-orange{
+    color: #F28123;
+}
+
+a.read-more-btn1 {
+    display: inline-block;
+    color: #ffffff !important;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-weight: 700;
+  }
+  
+  a.read-more-btn1:hover {
+    color: #F28123 !important;
+  }
