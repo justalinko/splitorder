@@ -47,8 +47,8 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
-								{{env('APP_NAME')}}
+							<a href="{{url('/')}}">
+								<h1 class="text-danger">{{env('APP_NAME')}}</h1>
 							</a>
 						</div>
 						<!-- logo -->
@@ -60,6 +60,7 @@
 								<li class="current-list-item"><a href="{{url('/home/tentang-kami')}}">Tentang Kami</a></li>
 								<li><a href="{{url('/home/produk')}}">Produk</a></li>
 								<li><a href="{{url('/home/kontak')}}">Kontak</a></li>
+								<li><a href="{{url('/auth/login')}}">Login</a></li>
 								<li>
 									<div class="header-icons">
 										

@@ -46,7 +46,8 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="{{url('/')}}">
-								<img src="{{asset('assets_frontend/img/logo.png')}}" alt="">
+								{{-- <img src="{{asset('assets_frontend/img/logo.png')}}" alt=""> --}}
+								<h1 class="text-danger">{{env('APP_NAME')}}</h1>
 							</a>
 						</div>
 						<!-- logo -->
@@ -58,6 +59,7 @@
 								<li><a href="{{url('/home/tentang-kami')}}">Tentang Kami</a></li>
 								<li><a href="{{url('/home/produk')}}">Produk</a></li>
 								<li><a href="{{url('/home/kontak')}}">Kontak</a></li>
+								<li><a href="{{url('/auth/login')}}">Login</a></li>
 								<li>
 									<div class="header-icons">
 										

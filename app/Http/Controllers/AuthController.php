@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -22,6 +24,38 @@ class AuthController extends Controller
         return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function registerPost(Request $request)
+    {
+        $val = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+            'phone' => 'required',
+        ]);
+        if($val)
+        {
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->phone = $request->phone;
+            $user->address = $request->address;
+            $user->max_production = $request->max_production;
+            $user->save();
+        }else{
+            return redirect()->route('register')->with('error', 'Oppes! You have entered invalid credentials');
+        }
+
+
+        
+
+        return redirect()->route('login')->with('success', 'Oppes! You have successfully registered');
+    }
     public function logout()
     {
         session()->flush();

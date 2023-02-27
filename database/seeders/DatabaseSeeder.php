@@ -46,6 +46,6 @@ class DatabaseSeeder extends Seeder
         ]);
         \App\Models\Product::factory(20)->create();
         \App\Models\Order::factory(100)->create();
-      
+        \App\Models\Post::factory(20)->create();
     }
 }

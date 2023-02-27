@@ -28,6 +28,8 @@ Route::get('/', [DashboardController::class , 'home']);
 Route::get('/auth/login' , [AuthController::class , 'login'] )->name('login');
 Route::post('/auth/login' , [AuthController::class , 'loginPost']);
 Route::get('/auth/logout' , [AuthController::class , 'logout']); 
+Route::get('/auth/register' , [AuthController::class , 'register'])->name('register');
+Route::post('/auth/register' , [AuthController::class , 'registerPost']);
 Route::get('/flow' , function(){
     return view('flow');
 });

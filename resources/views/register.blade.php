@@ -24,12 +24,56 @@
         <div class="card border">
           <div class="card-header bg-primary ">
             <div class="card-title">
-              <h3 class="text-white"><i class="bi bi-door-open"></i> Login</h3>
+              <h3 class="text-white"><i class="bi bi-door-open"></i> Daftar</h3>
             </div>
           </div>
           <div class="card-body p-4 bg-light">
-            <form action="/auth/login" method="post">
+            <form action="/auth/register" method="post">
               @csrf
+              <div class="form-group row mt-2">
+                <label for="" class="col-3">Nama</label>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="Nama Lengkap"
+                  />
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="" class="col-3">Nomer HP</label>
+                <div class="col-9">
+                  <input
+                    type="tel"
+                    name="phone"
+                    class="form-control"
+                    placeholder="No. HP"
+                  />
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="" class="col-3">Alamat</label>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    name="address"
+                    class="form-control"
+                    placeholder="Alamat anda"
+                  />
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="" class="col-3">Kapasitas Produksi</label>
+                <div class="col-9">
+                  <input
+                    type="tel"
+                    name="max_production"
+                    class="form-control"
+                    placeholder="Kemampuan kapasitas produksi anda"
+                  />
+                </div>
+              </div>
               <div class="form-group row mt-2">
                 <label for="" class="col-3">Email</label>
                 <div class="col-9">
@@ -55,7 +99,7 @@
               <div class="form-group row mt-2">
                 <label for="" class="col-3"></label>
                 <div class="col-9">
-                  <button type="submit" class="btn btn-primary w-100"><i class="bi bi-door-open"></i> Login</button>
+                  <button type="submit" class="btn btn-primary w-100"><i class="bi bi-door-open"></i> Daftar</button>
                 </div>
               </div>
             </form>
