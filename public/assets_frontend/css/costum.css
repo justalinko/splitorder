@@ -3,7 +3,7 @@
 }
 
 .text-orange{
-    color: #F28123;
+    color: #435ebe;
 }
 
 a.read-more-btn1 {
@@ -14,7 +14,7 @@ a.read-more-btn1 {
     transition: 0.3s;
     font-weight: 700;
   }
-  
+
   a.read-more-btn1:hover {
-    color: #F28123 !important;
+    color: #435ebe !important;
   }
