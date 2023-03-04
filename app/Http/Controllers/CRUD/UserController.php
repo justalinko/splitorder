@@ -47,7 +47,9 @@ class UserController extends Controller
             $ex->password = bcrypt($request->password);
             $ex->level = $request->level;
             $ex->phone = $request->phone;
+            if($request->community_id != 'none'){
             $ex->community_id = $request->community_id;
+            }
             $ex->max_production = $request->max_production;
             $ex->address = $request->address;
             $ex->save();

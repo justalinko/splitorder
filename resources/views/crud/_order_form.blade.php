@@ -35,9 +35,9 @@
                        <div class="form-group row">
                         <label for="" class="col-3">Produk</label>
                         <div class="col-9">
-                            <select name="product_id" id="" class="form-control select2">
+                            <select name="product_id" onchange="qtyisi()" class="form-control prodak">
                                 @foreach ($products as $product)
-                                <option value="{{$product->id}}">{{$product->name}} [ Harga : {{rupiah($product->price)}} ]</option>
+                                <option data-price="{{$product->price}}" data-minorder="{{$product->min_order}}" value="{{$product->id}}">{{$product->name}} [ Harga : {{rupiah($product->price)}} ]</option>
                                 @endforeach
                             </select>
                        </div>
@@ -48,7 +48,7 @@
                     <div class="form-group row mt-2">
                         <label for="" class="col-3">Jumlah Pesanan</label>
                         <div class="col-9">
-                            <input type="number" name="qty" class="form-control" value="{{old('qty')}}">
+                            <input type="number" name="qty" class="form-control" onkeyup="ubahHarga()" id="qtyku" value="">
                         </div>
                     </div>
                     @endif
@@ -80,7 +80,7 @@
                         <div class="form-group row mt-2">
                             <label for="" class="col-3">Total Harga</label>
                             <div class="col-9">
-                                <input type="tel" name="total_price" class="form-control" value="{{$isEdit ? $edit->total_price : ''}}">
+                                <input type="tel" id="total_price" name="total_price" class="form-control" value="{{$isEdit ? $edit->total_price : ''}}">
                             </div>
                         </div>
                         <div class="form-group row mt-2">
@@ -131,4 +131,21 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('js')
+<script>
+    const ubahHarga = () => {
+        const qty = document.getElementById('qtyku').value;
+        const harga = $('.prodak').find(':selected').data('price');
+        const total = qty * harga;
+        document.getElementById('total_price').value = total;
+    }
+    const qtyisi = () => {
+        const minorder = $('.prodak').find(':selected').data('minorder');
+        document.getElementById('qtyku').value = minorder;
+        $('#qtyku').attr('min', minorder);
+        ubahHarga();
+    }
+</script>
 @endsection

@@ -57,19 +57,20 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="{{url('/')}}">Beranda</a></li>
-								<li class="current-list-item"><a href="{{url('/home/tentang-kami')}}">Tentang Kami</a></li>
-								<li><a href="{{url('/home/produk')}}">Produk</a></li>
-								<li><a href="{{url('/home/kontak')}}">Kontak</a></li>
-								<li><a href="{{url('/auth/login')}}">Login</a></li>
-								<li>
+								<li @if(Request::is('home/tentang-kami')) @class('current-list-item') @endif><a href="{{url('/home/tentang-kami')}}">Tentang Kami</a></li>
+								<li @if(Request::is('home/produk')) @class('current-list-item') @endif><a href="{{url('/home/produk')}}">Produk</a></li>
+								<li @if(Request::is('home/berita')) @class('current-list-item') @endif><a href="{{url('/home/berita')}}">Berita</a></li>
+								<li @if(Request::is('home/kontak')) @class('current-list-item') @endif><a href="{{url('/home/kontak')}}">Kontak</a></li>
+								<li @if(Request::is('auth/login')) @class('current-list-item') @endif><a href="{{url('/auth/login')}}">Login</a></li>
+								{{-- <li>
 									<div class="header-icons">
 										
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
-								</li>
+								</li> --}}
 							</ul>
 						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						{{-- <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a> --}}
 						<div class="mobile-menu"></div>
 						<!-- menu end -->
 					</div>

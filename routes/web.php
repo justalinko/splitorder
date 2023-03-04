@@ -36,10 +36,15 @@ Route::get('/flow' , function(){
 
 Route::group(['prefix' => '/home'] , function(){
     Route::get('/tentang-kami' , [DashboardController::class , 'about']);
-    Route::get('/produk' , [DashboardController::class , 'product']);
+
+    Route::get('/produk' , [DashboardController::class , 'allProduct']);
     Route::get('/produk/{slug}' , [DashboardController::class , 'productDetail']);
-    Route::get('/kontak' , [DashboardController::class , 'contact']);
+    Route::get('/berita' , [DashboardController::class , 'allNews']);
     Route::get('/berita/{slug}' , [DashboardController::class , 'newsDetail']);
+    Route::get('/beli/{id}' , [DashboardController::class , 'beli']);    
+    Route::post('/beli' , [DashboardController::class , 'beliPost']);
+    Route::get('/invoice/{id}' , [DashboardController::class , 'invoice']);
+    Route::get('/kontak' , [DashboardController::class , 'contact']);
 });
 
 
@@ -48,6 +53,7 @@ Route::group(['prefix' => '/home'] , function(){
 Route::group(['middleware' => 'auth'] ,function(){
 
     Route::get('/dashboard' , [DashboardController::class , 'index']);
+    Route::post('/auth/update' , [AuthController::class , 'update']);
     Route::group(['prefix' => '/orders'] , function(){
     Route::get('/' , [OrderController::class , 'index']);
     Route::get('/{id}/distribute' , [OrderController::class , 'distributeOrder']);

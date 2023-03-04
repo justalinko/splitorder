@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('description');
             $table->integer('price');
-            $table->integer('min_order')->default(1000);
-            $table->integer('max_order')->default(1000000);
+            $table->bigInteger('min_order')->default(1000);
+            $table->bigInteger('max_order')->default(1000000);
             $table->text('note')->nullable();
             $table->timestamps();
         });

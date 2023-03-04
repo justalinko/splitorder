@@ -102,8 +102,8 @@
           </li>
 
           <li class="sidebar-title">Pengelolaan Komunitas</li>
-          <li class="sidebar-item @if(Request::is('produk')) active @endif">
-            <a href="/produk" class="sidebar-link">
+          <li class="sidebar-item @if(Request::is('product')) active @endif">
+            <a href="/product" class="sidebar-link">
               <i class="bi bi-truck-front"></i>
               <span>Produk</span>
             </a>

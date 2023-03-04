@@ -62,5 +62,20 @@ class AuthController extends Controller
         auth()->logout();
         return redirect('/auth/login');
     }
+    public function update(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->max_production = $request->max_production;
+        if($request->password != null)
+        {
+            $user->password = Hash::make($request->password);
+        }
+        $user->save();
+        return redirect('/dashboard')->with('success', 'Data berhasil diubah!');
+    }
    
 }

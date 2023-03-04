@@ -23,11 +23,13 @@
 							</div>
 						</div>
 						<div class="single-product-form">
-							<form action="index.html">
-								<input type="number" placeholder="0">
+							<form action="/home/beli/{{$product->id}}">
+								<input name="qty" min="{{$product->min_order}}" max="{{$product->max_order}}" value="
+								{{$product->min_order}}" type="number" placeholder="0">
+								<button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-shopping-cart"></i> Beli</button>
 							</form>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-							<p><strong>Categories: </strong>Fruits, Organic</p>
+							
+						
 						</div>
 						<h4>Share:</h4>
 						<ul class="product-share">
@@ -44,7 +46,7 @@
 	<!-- end single product -->
 
 	<!-- more products -->
-	<div class="more-products mb-150">
+	{{-- <div class="more-products mb-150">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
@@ -87,6 +89,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- end more products -->
 @endsection

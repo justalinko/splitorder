@@ -40,7 +40,7 @@
                             @php
                             if($kom->user_id != null){
                             $ketua = \App\Models\User::find($kom->user_id);
-                            $ketua = $ketua->nama;
+                            $ketua = $ketua->name;
                             }else{
                             $ketua = 'Belum ada';
                             }

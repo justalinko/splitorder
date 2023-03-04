@@ -1,57 +1,11 @@
 
-	<!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Pages</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
 	
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2023 - <a href="#">Genteng Mayong</a>,  All Rights Reserved.
+					<p>Copyrights &copy; {{date('Y')}} - <a href="{{url('/')}}">{{env('APP_NAME')}}</a>,  All Rights Reserved.
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
@@ -72,6 +26,7 @@
 	
 	<!-- jquery -->
 	<script src="{{asset('assets_frontend/js/jquery-1.11.3.min.js')}}"></script>
+	@yield('js')
 	<!-- bootstrap -->
 	<script src="{{asset('assets_frontend/bootstrap/js/bootstrap.min.js')}}"></script>
 	<!-- count down -->
@@ -90,6 +45,31 @@
 	<script src="{{asset('assets_frontend/js/sticker.js')}}"></script>
 	<!-- main js -->
 	<script src="{{asset('assets_frontend/js/main.js')}}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+	@if(session('success'))
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: "{{session('success')}}",
+			showConfirmButton: true,
+			
+		});
+	</script>
+	@endif
+
+	@if(session('error'))
+	<script>
+		Swal.fire({
+			icon: 'error',
+			title: "{{session('error')}}",
+			showConfirmButton: true,
+			
+		});
+	</script>
+	@endif
+
+
+	
 </body>
 </html>

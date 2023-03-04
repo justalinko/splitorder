@@ -89,6 +89,7 @@
                   <div class="card">
                     <div class="card-header">
                       <h4>Pesanan Terbaru</h4>
+                      <a href="/orders/add" class="btn btn-primary"><i class="bi bi-plus"></i> Pesanan Baru</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -157,7 +158,7 @@
                 </div>
                 <div class="card-footer">
                 <div class=" d-flex align-items-center py-1 px-1">
-                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-person"></i> Profile</a>&nbsp;&nbsp;
+                    <a href="#" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#propile"><i class="bi bi-person"></i> Profile</a>&nbsp;&nbsp;
                     <a href="/auth/logout" class="btn btn-outline-danger btn-sm ml-2"><i class="bi bi-box-arrow-right"></i> Logout</a>
                   </div>
                 </div>
@@ -181,7 +182,7 @@
              
                   <div class="px-4">
                     <button
-                      class="btn btn-block btn-xl btn-outline-primary font-bold mt-3"
+                      class="btn btn-block btn-xl btn-outline-primary font-bold mt-3" onclick="window.location.href='/anggota'"
                     >
                       Semua Anggota
                     </button>
@@ -190,5 +191,67 @@
               </div>
             </div>
           </section>
+
+
+          <div class="modal fade" id="propile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Pengaturan Akun ( {{auth()->user()->community?->name}} )</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="/auth/update" method="POST">
+                    <div class="form-group row">
+                    <label for="" class="col-md-3">Nama</label>
+                    <div class="col-md-9">
+                      <input type="text" name="name" class="form-control" value="{{auth()->user()->name}}">
+                    </div>
+                    </div>
+                    <div class="form-group row mt-2">
+                    <label for="" class="col-md-3">Email</label>
+                    <div class="col-md-9">
+                      <input type="text" name="email" class="form-control" value="{{auth()->user()->email}}">
+                    </div>  
+                    </div>
+                    <div class="form-group row mt-2">
+                      <label for="" class="col-md-3">Alamat</label>
+                      <div class="col-md-9">
+                        <textarea name="address" class="form-control">{{auth()->user()->address}}</textarea>
+                      </div>  
+                    </div> 
+                    <div class="form-group row mt-2">
+                      <label for="" class="col-md-3">No. Hp</label>
+                      <div class="col-md-9">
+                        <input type="text" name="phone" class="form-control" value="{{auth()->user()->phone}}">
+                      </div>  
+                    </div>
+                    <div class="form-group row mt-2">
+                      <label for="" class="col-md-3">Max Produksi</label>
+                      <div class="col-md-9">
+                        <input type="number" name="max_production" class="form-control" value="{{auth()->user()->max_production}}">
+                      </div>
+                    </div>
+                    <div class="form-group row mt-2">
+                      <label for="" class="col-md-3">Password</label>
+                      <div class="col-md-9">
+                        <input type="password" name="password" class="form-control">
+                        <small class="text-muted">Kosongkan jika tidak ingin mengganti password</small>
+                      </div>  
+                    </div>     
+                    <div class="form-group row mt-4">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9">
+                      <button class="btn btn-primary w-100" type="submit">Simpan</button>
+                    </div>
+                    </div>            
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 @endsection
 

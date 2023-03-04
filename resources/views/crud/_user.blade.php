@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}} / {{$user->phone}}</td>
-                                    <td>{{$user?->community->name}}</td>
+                                    <td>{{$user?->community?->name}}</td>
                                     <td>
                                         {!!user_level($user->level)!!}
                                     </td>

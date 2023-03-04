@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form @if($isEdit) action="/post/{{$edit->id}}/edit" @else action="/post/add" @endif>
+                <form @if($isEdit) action="/post/{{$edit->id}}/edit" @else action="/post/add" @endif method="POST">
                     @csrf
 
                     <div class="form-group row">

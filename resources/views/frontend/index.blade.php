@@ -140,7 +140,7 @@
 						</div>
 						<h3>{{$pro->title}}</h3>
 						<h5 class="product-price"><span>{{rupiah($pro->price)}} / Pcs</span></h5>
-						<a href="/home/produk/{{$pro->slug}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Tambahkan Ke Keranjang</a>
+						<a href="/home/produk/{{$pro->slug}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Beli</a>
 					</div>
 				</div>
                 @endforeach
@@ -173,15 +173,15 @@
                 @foreach($news as $p)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg" style="background-image: url(assets_frontend/img/latest-news/berita1.jpg);"></div></a>
+						<a href="single-news.html"><div class="latest-news-bg" style="background-image: url({{$p->image}});"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single-news.html">Genteng Terkena Lumut Lebih Bagus</a></h3>
+							<h3><a href="/home/berita/{{$p->slug}}">{{$p->title}}</a></h3>
 							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+								<span class="author"><i class="fas fa-user"></i> {{$p->author}}</span>
+								<span class="date"><i class="fas fa-calendar"></i> {{$p->created_at->diffForHumans()}}</span>
 							</p>
-							<p class="excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, temporibus.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<p class="excerpt">{{substr($p->content,0,100)}}...</p>
+							<a href="/home/berita/{{$p->slug}}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -190,66 +190,21 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-right">
-					<a href="news.html" class="boxed-btn">Tampilkan Lebih Banyak</a>
+					<a href="/home/berita" class="boxed-btn">Tampilkan Lebih Banyak</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end latest news -->
 
-	<!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Pages</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
+
 	
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2023 - <a href="#">Genteng Mayong</a>,  All Rights Reserved.
+					<p>Copyrights &copy; {{date('Y')}} - <a href="{{url('/')}}">{{env('APP_NAME')}}</a>,  All Rights Reserved.
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">

@@ -25,7 +25,7 @@
                        <select name="user_id" id="user_id" class="form-control">
                             <option value="">Pilih Ketua Komunitas</option>
                             @foreach(\App\Models\User::all() as $x)
-                                 <option value="{{$x->id}}" @if($isEdit) {{$edit->user_id == $x->id ? 'selected' : ''}} @endif>{{$x->name}}</option>
+                                 <option value="{{$x->id}}" @if($isEdit) {{$edit->user_id == $x->id ? 'selected' : ''}} @endif>{{$x->name}} - {{$x->community?->name}} </option>
                             @endforeach
                        </select>
                     </div>

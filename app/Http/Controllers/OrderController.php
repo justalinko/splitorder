@@ -35,6 +35,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $order = new Order();
+        $order->product_id = $request->product_id;
         $order->customer_name = $request->customer_name;
         $order->customer_phone = $request->customer_phone;
         $order->payment_method = $request->payment_method;
@@ -44,6 +45,7 @@ class OrderController extends Controller
         $order->status = $request->status;
         $order->note = $request->note;
         $order->estimate_time = $request->estimate_time;
+        $order->qty = $request->qty;
         $order->save();
 
         return redirect('/orders')->with('success' , 'Berhasil menambah pesanan');

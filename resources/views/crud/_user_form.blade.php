@@ -18,6 +18,7 @@
                     <div class="col-9">
                         <select name="community_id" id="" class="form-control choices" required>
                             <option value="">Pilih Komunitas</option>
+                            <option value="none">Tidak Berkomunitas</option>
                             @foreach(\App\Models\Community::all() as $x)
                                 <option value="{{$x->id}}" @if($isEdit) {{$edit->community_id == $x->id ? 'selected' : ''}} @endif>{{$x->name}}</option>
                             @endforeach
