@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form @if($isEdit) action="/post/{{$edit->id}}/edit" @else action="/post/add" @endif method="POST">
+                <form @if($isEdit) action="/post/{{$edit->id}}/edit" @else action="/post/add" @endif method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group row">
@@ -25,7 +25,7 @@
                         @endif
                         <label for="" class="col-3 text-end">Thumbnail Image</label>
                         <div class="col-9">
-                            <input type="file" name="image" class="image-preview-filepond">
+                            <input type="file" name="image" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">

@@ -46,6 +46,7 @@
                             }
                             $totalAnggota = $kom->users()->count();
                             $maxProduction = $kom->users()->sum('max_production');
+                            
                             @endphp
                                 <tr>
                                     <td>{{$ketua}}</td>

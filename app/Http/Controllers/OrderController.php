@@ -155,12 +155,12 @@ class OrderController extends Controller
 
     public function orderShippingPost(Request $request,$id)
     {
-        // $order = Order::find($id);
-        // $order->status = 'shipping';
-        // $order->save();
+        $order = Order::find($id);
+        $order->status = 'shipping';
+        $order->save();
 
         $delivery = new Delivery();
-        $delivery->distribution_id = 0;
+      //  $delivery->distribution_id = 0;
         $delivery->order_id = $id;
         $delivery->expedition_id =  $request->expedition_id;
         $delivery->estimated_time = $request->estimated_time;

@@ -41,7 +41,7 @@
                                         {!!order_status($distribution->status)!!}
                                     </td>
                                     <td>
-                                       <a href="#" data-bs-toggle="modal" data-bs-target="#ingfo_{{$distribution->id}}" class="btn btn-info"><i class="bi bi-info"></i></a>
+                                       {{$distribution->note}}
                                     </td>
                                     <td>{{$distribution?->created_at}}</td>
                                     <td>{{$distribution->estimate_time}}</td>

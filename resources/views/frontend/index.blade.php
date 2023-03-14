@@ -180,7 +180,7 @@
 								<span class="author"><i class="fas fa-user"></i> {{$p->author}}</span>
 								<span class="date"><i class="fas fa-calendar"></i> {{$p->created_at->diffForHumans()}}</span>
 							</p>
-							<p class="excerpt">{{substr($p->content,0,100)}}...</p>
+							<p class="excerpt">{{strip_tags(substr($p->content,0,100))}}...</p>
 							<a href="/home/berita/{{$p->slug}}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>

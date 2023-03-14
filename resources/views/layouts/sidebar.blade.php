@@ -108,6 +108,12 @@
               <span>Produk</span>
             </a>
           </li>
+          <li class="sidebar-item @if(Request::is('works')) active @endif">
+            <a href="/works" class="sidebar-link">
+              <i class="bi bi-person-workspace"></i>
+              <span>Kerjaan</span>
+            </a>
+          </li>
           <li class="sidebar-item has-sub">
             <a href="#" class="sidebar-link">
               <i class="bi bi-person"></i>

@@ -39,7 +39,7 @@
                                 {{$x->author}}
                             </td>
                             <td>
-                                <a href="/post/{{$x->slug}}" target="_blank">{{$x->slug}}</a>
+                                <a href="/home/berita/{{$x->slug}}" target="_blank">{{$x->slug}}</a>
                             </td>
                         
                             <td>

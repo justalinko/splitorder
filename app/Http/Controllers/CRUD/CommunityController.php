@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CRUD;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CommunityController extends Controller
@@ -44,6 +45,11 @@ class CommunityController extends Controller
             $kom->user_id = $request->user_id;
             $kom->profile = $request->profile;
             $kom->save();
+            
+            $user = User::find($request->user_id);
+            $user->community_id = $kom->id;
+            $user->save();
+
             return redirect('/komunitas')->with('success' , 'Komunitas berhasil ditambahkan');
         }else{
             return redirect('/komunitas')->with('error' , 'Komunitas gagal ditambahkan');
@@ -86,6 +92,10 @@ class CommunityController extends Controller
             $kom->user_id = $request->user_id;
             $kom->profile = $request->profile;
             $kom->save();
+
+            $user = User::find($request->user_id);
+            $user->community_id = $id;
+            $user->save();
             return redirect('/komunitas')->with('success' , 'Komunitas berhasil diubah');
         }else{
             return redirect('/komunitas')->with('error' , 'Komunitas gagal diubah');

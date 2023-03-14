@@ -21,7 +21,7 @@ class AuthController extends Controller
             return redirect('/dashboard');
         }
 
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+        return redirect('/auth/login')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
     public function register()
@@ -59,7 +59,7 @@ class AuthController extends Controller
     public function logout()
     {
         session()->flush();
-        auth()->logout();
+        auth()->logout();   
         return redirect('/auth/login');
     }
     public function update(Request $request)

@@ -11,12 +11,12 @@
                 </div>
             </div>
             <div class="card-body">
-                <form @if($isEdit) action="/komunitas/{{$edit->id}}/edit" @else action="/komunitas/add" @endif >
+                <form @if($isEdit) action="/komunitas/{{$edit->id}}/edit" @else action="/komunitas/add" @endif method="POST" >
                 @csrf
                 <div class="form-group row">
                     <label for="" class="col-3 text-end">Nama Komunitas</label>
                     <div class="col-9">
-                        <input type="text" name="name" class="form-control choices" value="{{$isEdit ? $edit->name : ''}}" required>
+                        <input type="text" name="name" class="form-control " value="{{$isEdit ? $edit->name : ''}}" required>
                     </div>
                 </div>
                 <div class="form-group row">

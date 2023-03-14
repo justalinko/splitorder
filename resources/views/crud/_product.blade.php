@@ -34,7 +34,7 @@
                                         {{$p->name}}
                                     </td>
                                     <td>
-                                        {{$p->description}}
+                                        {{strip_tags($p->description)}}
                                     </td>
                                     <td>{{rupiah($p->price)}}</td>
                                     <td>{{$p->min_order}}</td>
