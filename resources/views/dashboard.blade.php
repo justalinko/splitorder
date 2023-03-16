@@ -104,7 +104,7 @@
                                     @foreach($latestOrder as $order)
                                     <tr>
                                         <td>{{ $order->id }}</td>
-                                        <td>{{ $order->product->name }}</td>
+                                        <td>{{ $order?->product?->name }}</td>
                                         <td>{{ $order->qty }}</td>
                                         <td>{!!order_status($order->status)!!}</td>
                                     </tr>

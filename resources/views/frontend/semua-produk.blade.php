@@ -18,7 +18,7 @@
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="{{$p->image}}" alt=""></a>
+							<a href="single-product.html"><img src="{{$p?->image}}" alt=""></a>
 						</div>
 						<h3>{{$p->title}}</h3>
 						<h5 class="product-price"><span>{{rupiah($p->price)}} / Pcs</span></h5>

@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="single-product-img">
-						<img src="{{$product->image}}" alt="">
+						<img src="{{$product?->image}}" alt="">
 					</div>
 				</div>
 				<div class="col-md-7">

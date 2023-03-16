@@ -136,7 +136,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="/home/produk/{{$pro->slug}}"><img src="{{$pro->image}}" alt=""></a>
+							<a href="/home/produk/{{$pro->slug}}"><img src="{{$pro?->image}}" alt=""></a>
 						</div>
 						<h3>{{$pro->title}}</h3>
 						<h5 class="product-price"><span>{{rupiah($pro->price)}} / Pcs</span></h5>
@@ -173,7 +173,7 @@
                 @foreach($news as $p)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg" style="background-image: url({{$p->image}});"></div></a>
+						<a href="single-news.html"><div class="latest-news-bg" style="background-image: url({{$p?->image}});"></div></a>
 						<div class="news-text-box">
 							<h3><a href="/home/berita/{{$p->slug}}">{{$p->title}}</a></h3>
 							<p class="blog-meta">
