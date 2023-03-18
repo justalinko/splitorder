@@ -47,7 +47,7 @@
 						<div class="site-logo">
 							<a href="{{url('/')}}">
 								{{-- <img src="{{asset('assets_frontend/img/logo.png')}}" alt=""> --}}
-								<h1 class="text-danger">{{env('APP_NAME')}}</h1>
+								<h5 class="text-danger">{{env('APP_NAME')}}</h5>
 							</a>
 						</div>
 						<!-- logo -->
@@ -104,11 +104,11 @@
 				<div class="col-lg-9 mx-auto mt-5 text-center">
 					<div class="hero-text">
 						<div class="hero-text-tablecell">
-							<h3 class="text-white">{{env('APP_NAME')}}</h3>
-							<h1>{{env('APP_TITLE')}}</h1>
+							<h2 class="text-white">{{env('APP_TITLE')}}</h2>
+							{{-- <h1>{{env('APP_TITLE')}}</h1> --}}
 							<div class="hero-btns">
 								<!-- <a href="shop.html" class="boxed-btn">Fruit Collection</a> -->
-								<a href="/home/hubungi-kami" class="bordered-btn">Hubungi Kami</a>
+								<a href="https://wa.me/62871233193913" target="_blank" class="bordered-btn">Hubungi Kami</a>
 							</div>
 						</div>
 					</div>
