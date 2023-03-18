@@ -82,20 +82,7 @@
             </a>
           </li>
 
-          @if(\App\Models\Community::where('user_id' , auth()->user()->id)->first())
-          <li class="sidebar-item @if(Request::is('orders')) active @endif">
-            <a href="/orders" class="sidebar-link">
-              <i class="bi bi-bag"></i>
-              <span>Pesanan</span>
-            </a>
-          </li>
-          <li class="sidebar-item @if(Request::is('works/monitor')) active @endif">
-            <a href="/works/monitor" class="sidebar-link">
-              <i class="bi bi-display"></i>
-              <span>Monitor Kerjaan</span>
-            </a>
-          </li>
-          @endif
+        
           <li class="sidebar-item @if(Request::is('works')) active @endif">
             <a href="/works" class="sidebar-link">
               <i class="bi bi-person-workspace"></i>

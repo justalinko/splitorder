@@ -102,7 +102,7 @@ class OrderController extends Controller
         $order->status = 'distribute';
         $order->community_id = $request->community_id;
         $order->save();
-        return redirect('/orders')->with('success' , 'Pesanan berhasil didistribusikan');
+        return redirect('/orders/'.$id.'/share')->with('success' , 'Pesanan berhasil didistribusikan');
     }
 
     public function sharedOrder($id)

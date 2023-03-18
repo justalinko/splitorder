@@ -18,11 +18,11 @@
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="{{$p?->image}}" alt=""></a>
+							<a href="/home/produk/{{$p->slug}}"><img src="{{$p?->image}}" alt=""></a>
 						</div>
 						<h3>{{$p->title}}</h3>
 						<h5 class="product-price"><span>{{rupiah($p->price)}} / Pcs</span></h5>
-						<a href="/home/produk/{{$p->id}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Beli</a>
+						<a href="/home/produk/{{$p->slug}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Beli</a>
 					</div>
 				</div>
                 @endforeach

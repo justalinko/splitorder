@@ -23,6 +23,7 @@
                             <th>Catatan</th>
                             <th>Tanggal Pesan</th>
                             <th>Estimasi Jadi</th>
+                            <th>Ubah Status</th>
                             <th>Kirim</th>
                         </thead>
                         <tbody>
@@ -45,6 +46,17 @@
                                     </td>
                                     <td>{{$distribution?->created_at}}</td>
                                     <td>{{$distribution->estimate_time}}</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                              Aksi
+                                            </button>
+                                            <div class="dropdown-menu">
+                                              <a class="dropdown-item" href="/orders/{{$distribution->id}}/done">Status Selesai</a>
+                                              <a class="dropdown-item" href="/orders/{{$distribution->id}}/delay">Status Kendala</a>
+                                            </div>
+                                          </div>
+                                    </td>
                                     <td>
                                         @if($distribution->status == 'production_done')
                                          <div class="btn-group">

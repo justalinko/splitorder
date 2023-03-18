@@ -94,6 +94,12 @@
               <span>Distribusi</span>
             </a>
           </li>
+          <li class="sidebar-item @if(Request::is('works/monitor')) active @endif">
+            <a href="/works/monitor" class="sidebar-link">
+              <i class="bi bi-display"></i>
+              <span>Monitor Kerjaan</span>
+            </a>
+          </li>
           <li class="sidebar-item @if(Request::is('shipping')) active @endif">
             <a href="/shipping" class="sidebar-link">
               <i class="bi bi-truck-front"></i>

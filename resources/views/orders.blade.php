@@ -16,7 +16,7 @@
             <div class="card-body">
                 <div class="table-responsive">
 
-                    @if(auth()->user()->level == 'admin')
+                 
                     <table class="table table-striped table-hover datatable">
                         <thead>
                             <th>#ID</th>
@@ -71,47 +71,6 @@
                         </tbody>
                     </table>
 
-                    @else
-
-                    <table class="table table-striped table-hover datatable">
-                        <thead>
-                            <th>
-                                #ID
-                            </th>
-                            <th>Produk</th>
-                            <th>Kuantitas</th>
-                            <th>Kustomer</th>
-                            <th>Status</th>
-                            <th>Estimasi Jadi</th>
-                            <th>Aksi</th>
-                        </thead>
-                        <tbody>
-                            @foreach ($orders as $order)
-                                <tr>
-                                    <td>{{$order->id}}</td>
-                                    <td>{{$order->product->name}}</td>
-                                    <td>{{$order->qty}}</td>
-                                    <td>{{$order->customer_name}} / {{$order->customer_phone}}</td>
-                                    <td>  {!!order_status($order->status)!!}</td>
-                                    <td>{{$order->estimate_time}}</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                              Aksi
-                                            </button>
-                                            <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="/orders/{{$order->id}}/share">Bagi produksi</a>
-                                              <a class="dropdown-item" href="/orders/{{$order->id}}/done">Status Selesai</a>
-                                              <a class="dropdown-item" href="/orders/{{$order->id}}/delay">Status Kendala</a>
-                                            </div>
-                                          </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    
-                    @endif
                 </div>
             </div>
         </div>
