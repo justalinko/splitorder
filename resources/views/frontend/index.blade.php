@@ -162,37 +162,35 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
-						<h3><span class="orange-text">Berita</span> Terbaru</h3>
-						<p>Berita terbaru seputar produk kami.</p>
+						<h3><span class="orange-text">Anggota</span> Komunitas</h3>
+						<p>Kami tidak sendiri, kami di temani teman-temang anggota produksi genteng terbaik .</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
 
-                @foreach($news as $p)
+                @foreach($anggotas as $p)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg" style="background-image: url({{$p?->image}});"></div></a>
+						<a href="#"><div class="latest-news-bg" style="background-image: url(https://ui-avatars.com/api/?name={{urlencode($p->name)}});"></div></a>
 						<div class="news-text-box">
-							<h3><a href="/home/berita/{{$p->slug}}">{{$p->title}}</a></h3>
+							<h3>{{$p->name}}</h3>
 							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> {{$p->author}}</span>
-								<span class="date"><i class="fas fa-calendar"></i> {{$p->created_at->diffForHumans()}}</span>
+								<span class="author"><i class="fas fa-users"></i> {{$p?->community?->name}}</span>
+								<span class="date"><i class="fas fa-map"></i> {{$p->address}}</span>
 							</p>
-							<p class="excerpt">{{strip_tags(substr($p->content,0,100))}}...</p>
-							<a href="/home/berita/{{$p->slug}}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
                 @endforeach
 			
 			</div>
-			<div class="row">
+			{{-- <div class="row">
 				<div class="col-lg-12 text-right">
 					<a href="/home/berita" class="boxed-btn">Tampilkan Lebih Banyak</a>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	<!-- end latest news -->

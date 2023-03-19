@@ -27,6 +27,7 @@ class DashboardController extends Controller
     {
         $data['products'] = Product::take(6)->orderBy('id', 'desc')->get();
         $data['news'] = Post::take(3)->orderBy('id', 'desc')->get();
+        $data['anggotas'] = User::all();
         return view('frontend.index',$data);
     }
 
