@@ -30,7 +30,7 @@
                             @foreach ($distributions as $distribution)
                                 <tr>
                                     <td>{{$distribution->id}}</td>
-                                    <td>{{$distribution->product->name}}</td>
+                                    <td>{{$distribution->product?->name}}</td>
                                     <td>{{$distribution->qty}}</td>
                                     <td>
                                         @foreach(\App\Models\User::where('community_id' , $distribution?->community_id)->get() as $user)

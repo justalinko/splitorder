@@ -24,9 +24,9 @@
                             @foreach($works as $work)
                             <tr>
                                 <td>{{$work->order_id}}</td>
-                                <td>{{$work->order->product->name}}</td>
+                                <td>{{$work->order?->product?->name}}</td>
                                 <td>{{$work->production_total}}</td>
-                                <td>{{$work->user->name}} <span class="badge bg-primary">{{$work->community->name}}</span></td>
+                                <td>{{$work->user?->name}} <span class="badge bg-primary">{{$work->community?->name}}</span></td>
                                 <td>{!!order_status($work->status)!!}</td>
                                 <td>{{$work->note}}</td>
                             </tr>
